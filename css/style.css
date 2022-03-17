@@ -1,0 +1,291 @@
+/*Sebastian Tischler, 11153606*/
+/*Leon Adel, 11153603*/
+
+/*google-fonts*/
+
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/poppins-v19-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/poppins-v19-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* poppins-italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/poppins-v19-latin-italic.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/poppins-v19-latin-italic.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* poppins-600 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+    url('../fonts/poppins-v19-latin-600.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/poppins-v19-latin-600.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+    url('../fonts/poppins-v19-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/poppins-v19-latin-700.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/*font settings*/
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 1em;
+}
+
+/*headline*/
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+/*italic*/
+i {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*fat*/
+b {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/*container/box*/
+.grid article {
+  border: solid black 1px;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: rgb(196, 196, 196);
+}
+
+/*navigation bar*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid black 1px;
+  background-color: rgb(196, 196, 196);
+
+}
+
+.nav-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.nav-ul li a {
+  display: inline-block;
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.logo a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/*footer*/
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.footer-nav li a {
+  display: inline-block;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.footer-nav li a:hover {
+  color: rgb(247, 114, 114);
+}
+
+footer {
+  border: solid black 1px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: rgb(196, 196, 196);
+}
+
+/*Grid*/
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 2em;
+  width: min(80%, 100em);
+  margin-inline: auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-span-quantity {
+  grid-column: span 3;
+}
+
+/*responsible grid, footer and navigation bar with media query*/
+/*middle Window*/
+@media (max-width:1500px) and (min-width:850px) {
+
+  /*grid*/
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-span-quantity {
+    grid-column: span 2;
+  }
+
+  /*navigation bar*/
+
+  nav {
+    flex-direction: column;
+  }
+
+  .nav-ul {
+    flex-direction: column;
+  }
+}
+
+/*small Window*/
+@media (max-width:850px) and (min-width:0px) {
+  .grid-span-quantity {
+    grid-column: span 1;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /*footer*/
+  .footer-nav {
+    flex-direction: column;
+  }
+
+  /*navigation bar*/
+  nav {
+    flex-direction: column;
+  }
+
+  .nav-ul {
+    flex-direction: column;
+  }
+}
+
+/*hover navigation bar (when hover and when active)*/
+nav ul li .active {
+  color: red;
+}
+
+nav ul li a:hover {
+  color: rgb(247, 114, 114);
+}
+
+
+/*table*/
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(196, 196, 196);
+}
+
+/*time beam*/
+.tour {
+  position: relative;
+  margin-left: 7.5em;
+  list-style-type: none;
+}
+
+.tour::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  top: 0;
+  background: #000000;
+  width: 0.4em;
+}
+
+.tour li div {
+  display: block;
+  font-weight: bold;
+  margin-left: -10em;
+  width: 6em;
+  text-align: right;
+}
+
+/*aside*/
+aside {
+  float: right;
+  background-color: rgb(230, 230, 230);
+  width: 35%;
+  font-size: 0.75em;
+  padding: 1em;
+}
+
+/*image size*/
+article img {
+  width: 100%;
+  height: auto;
+}
+
+.grid-span-quantity img {
+  height: auto;
+  width: 20%;
+}
+
+/*image Touren*/
+.advertisement figcaption {
+  color: rgb(255, 255, 255);
+  padding: 1em;
+  font-size: 1.25em;
+  background: rgb(120, 120, 120);
+}
